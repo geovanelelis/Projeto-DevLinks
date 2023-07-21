@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #fff;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --border-profile-color: rgba(101, 101, 101, 0.305);
+  --profile-shadow: 1px 1px 10px rgba(116, 134, 147, 0.3);
+  --border-links-color: rgba(255, 255, 255, 0.5);
+  --bg-links-color: rgba(255, 255, 255, 0.05);
+  --bg-links-color-hover: rgba(255, 255, 255, 0.02);
+  --shadow: 1px 1px 12px rgba(151, 144, 154, 0.3);
+  --bg-social-links-color: rgba(255, 255, 255, 0.1);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+  --switch-shadow: 1px 1px 7px rgba(214, 214, 214, 0.4);
+  --profile-photo: url(https://github.com/geovanelelis.png);
+}
+
+.light {
+  --text-color: #131313;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --border-profile-color: rgba(149, 149, 149, 0.5);
+  --profile-shadow: -1px 1px 7px rgba(70, 70, 70, 0.3);
+  --border-links-color: rgba(0, 0, 0, 0.5);
+  --bg-links-color: rgba(0, 0, 0, 0.05);
+  --bg-links-color-hover: rgba(0, 0, 0, 0.02);
+  --shadow: -1px 1px 12px rgba(70, 70, 70, 0.3);
+  --bg-social-links-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+  --switch-shadow: -1px 1px 7px rgba(70, 70, 70, 0.4);
+  --profile-photo: url(./assets/avatar-light.jpg);
+}
+
+body {
+  /* background: color image repeat position/size */
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+/* PERFIL*/
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 108px;
+  border: 2px solid var(--border-profile-color);
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+#profile img:hover {
+  box-shadow: var(--profile-shadow);
+  transition: 0.2s;
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/* SWITCH */
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  left: 0;
+  transform: translateY(-50%);
+
+  cursor: pointer;
+}
+
+#switch button:hover {
+  box-shadow: var(--switch-shadow);
+  transition: 0.2s;
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  border: 1px solid var(--border-links-color);
+  background: var(--bg-links-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* LINKS */
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+  gap: 16px;
+}
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border-links-color);
+  background: var(--bg-links-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+ul li a:hover {
+  border: 1.5px solid var(--text-color);
+  background: var(--bg-links-color-hover);
+  box-shadow: var(--shadow);
+}
+
+/* SOCIAL LINKS */
+#social-links {
+  display: flex;
+  padding: 28px 0;
+  justify-content: center;
+  gap: 8px;
+  font-size: 24px;
+}
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  transition: background 0.175s;
+  border-radius: 50%;
+}
+#social-links a:hover {
+  background: var(--bg-social-links-color);
+}
+
+#social-links ion-icon:hover {
+  color: (--text-color-hover);
+}
+
+/* RODAPÉ */
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer a:hover {
+  color: rgb(30, 148, 221);
+}
